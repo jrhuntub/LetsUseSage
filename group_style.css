@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+body {
+    margin: 200px;
+}
+
+header a {
+    text-decoration: underline;
+}
+
+div.create-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.875);
+    color: white;
+    font-size: large;
+    min-width: 400px;
+    min-height: 350px;
+}
+
+h2 {
+    margin: 0;
+    font-size: x-large;
+}
+
+label,
+select,
+input {
+    font-size: 16px;
+    margin: 10px;
+}
+
+.sagecell_evalWrapper {
+    position: fixed;
+    margin-top: 10px;
+}

@@ -25,7 +25,17 @@ header {
     border: 3px solid black;
     background: linear-gradient(to top right, black, hsl(212, 100%, 19%));
 }
-a {
+
+a{
+    color: white;
+    text-decoration: none;
+    :hover {
+        background-color: none;
+        text-decoration: underline;
+    }
+}
+
+a.choice {
     margin: 20px;
     padding: 20px 20px;
     font-size: x-large;
@@ -36,7 +46,7 @@ a {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.612);
 }
 
-a:hover {
+a.choice:hover {
     background-color: rgb(1, 1, 145);
 }
 div.choices {

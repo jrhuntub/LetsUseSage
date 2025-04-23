@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Group Creation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="group_style.css">
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="https://jrhuntub.github.io/LetsUseSage/home">
+            <h1>Let's Use Sage!</h1>
+        </a>
+    </header>
+
+    <div class="create-container">
+        <h2>Create a Group</h2>
+
+        <label for="groupType">Choose Group Type:</label>
+        <select id="groupType" onchange="updatePlaceholder()">
+            <option value="empty"></option>
+            <option value="Zmod">ℤ mod n</option>
+            <option value="S">Symmetric group (Sₙ)</option>
+            <option value="D">Dihedral group (Dₙ)</option>
+            <option value="A">Alternating group (Aₙ)</option>
+        </select>
+
+        <label id="paramLabel" for="groupParam">n:</label>
+        <input type="number" id="groupParam" value="1">
+
+
+        <!-- Sage Cell Output -->
+        <div id="sagecell"></div>
+    </div>
+
+    <script>
+        // Initialize Sage cell
+        sagecell.makeSagecell({
+            inputLocation: '#sagecell',
+            template: sagecell.templates.minimal,
+            autoeval: false
+        });
+
+        // When dropdown/input changes, update Sage code dynamically
+        function updateSageCode() {
+            const varName = "G";
+            const type = document.getElementById("groupType").value;
+            const param = document.getElementById("groupParam").value;
+
+            let code = "";
+            if (type === "Zmod" && param != 0 && param) {
+                code = `${varName} = Integers(${param})\nlist(${varName})`;
+            } else if (type === "S" && param != 0 && param) {
+                code = `${varName} = SymmetricGroup(${param})\n${varName}.list()`;
+            } else if (type === "D" && param != 0 && param) {
+                code = `${varName} = DihedralGroup(${param})\n${varName}.list()`;
+            } else if (type === "A" && param != 0 && param) {
+                code = `${varName} = AlternatingGroup(${param})\n${varName}.list()`;
+            } else {
+                code = "# Please enter a valid group type and parameter";
+            }
+
+            // Update Sage textarea
+            const textarea = document.querySelector("#sagecell .sagecell_input textarea");
+            if (textarea) {
+                textarea.value = code;
+            }
+        }
+
+        // Attach input change listeners
+        document.getElementById("groupType").addEventListener("change", () => {
+            updatePlaceholder(); // keep this if you want param label toggle
+            updateSageCode();
+        });
+        document.getElementById("groupParam").addEventListener("input", updateSageCode);
+    </script>
+
+</body>
+
+</html>
