@@ -1,8 +1,9 @@
 @charset "utf-8";
 
 body {
-    margin: 200px;
+    margin: 120px;
 }
+
 
 header a {
     text-decoration: underline;
@@ -18,11 +19,13 @@ div.group-container {
     font-size: large;
     min-width: 400px;
     min-height: 350px;
+    max-width: 800px;
+    max-height: 700px;
 }
 
 h2 {
-    margin: 0;
     font-size: x-large;
+    padding-bottom: 10px;
 }
 
 label,
@@ -30,4 +33,12 @@ select,
 input {
     font-size: 16px;
     margin: 10px;
+}
+
+div.form-1, div.form-2 {
+    max-width: 800px;
+    max-height: 600px;
+    margin: 50px 50px;
+    background-color: rgba(3, 1, 73, 0.875);
+    padding: 20px 20px;
 }

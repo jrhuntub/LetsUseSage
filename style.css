@@ -2,7 +2,7 @@
 
 /*Main StyleSheet*/
 body {
-    margin: 250px;
+    margin: 200px;
     display: flex;
     align-items: center;
     align-content: center;
@@ -49,6 +49,7 @@ a.choice {
 a.choice:hover {
     background-color: rgb(1, 1, 145);
 }
+
 div.choices {
     padding: 60px;
 }
