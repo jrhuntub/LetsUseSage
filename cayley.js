@@ -22,7 +22,7 @@ G = Integers(n)
 elements = list(G)
 
 # Top header
-print("    |", end="")
+print("     |", end="")
 for g in elements:
     print(f"{g}".rjust(4), end="")
 print()
