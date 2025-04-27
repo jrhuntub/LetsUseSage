@@ -21,7 +21,7 @@
             <h3>List All Subgroups</h3>
             <label for="groupTypeSubgroups">Group Type:</label>
             <select id="groupTypeSubgroups">
-                <option value="empty"></option>
+                <option value="empty">Please Select a Group</option>
                 <option value="Zmod">ℤ/ℤ mod n</option>
                 <option value="S">Symmetric Group Sₙ</option>
                 <option value="A">Alternating Group Aₙ</option>
@@ -31,15 +31,12 @@
             <div id="sagecell-subgroups"></div>
         </div>
 
-
-
         <div class="form-2">
             <!-- Form 2: Show Cosets of Default Subgroup -->
             <h3>Show Cosets of a Subgroup</h3>
             <label for="groupTypeCosets">Group Type:</label>
             <select id="groupTypeCosets">
-                <option value="empty"></option>
-                <option value="Zmod">ℤ/ℤ mod n</option>
+                <option value="empty">Please Select a Group</option>
                 <option value="S">Symmetric Group Sₙ</option>
                 <option value="A">Alternating Group Aₙ</option>
             </select>
@@ -107,26 +104,18 @@ subgroups = G.subgroups()
 
             if (type === "empty" || isNaN(n)) {
                 code = "# Please select a valid group type and value of n";
-            } else if (type === "Zmod") {
-                code = `n = ${n}
-d = 1  # Default generator
-G = list(range(n))
-H = [(d * i) % n for i in range(n // d)]
-
-# Build cosets: a + H
-cosets = []
-for a in G:
-    coset = sorted(list({(a + h) % n for h in H}))
-    if coset not in cosets:
-        cosets.append(coset)
-
-["Coset: " + str(c) for c in cosets]`;
-            } else {
+            } else if (type == "S") {
                 code = `${getGroupDefinition(type, n)}
 H = G.subgroup([G.gen(0)])
 left = G.cosets(H, side='left')
 right = G.cosets(H, side='right')
 "Left Cosets: " + str(left) + " \Right Cosets: " + str(right)`;
+            }
+            else {
+                code = `${getGroupDefinition(type, n)}
+H = G.subgroup([G.gen(0)])
+left = G.cosets(H, side='left')
+"Cosets: " + str(left)`;
             }
 
             const textarea = document.querySelector("#sagecell-cosets .sagecell_input textarea");
