@@ -16,7 +16,7 @@ body {
 
 h2.index {
     color: white;
-    font-family:serif;
+    font-family: serif;
     font-size: x-large;
     background-color: blue;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.612);
@@ -36,9 +36,10 @@ header {
     background: linear-gradient(to top right, black, hsl(212, 100%, 19%));
 }
 
-a{
+a {
     color: white;
     text-decoration: none;
+
     :hover {
         background-color: none;
         text-decoration: underline;
@@ -67,6 +68,7 @@ div.choices {
 div.images {
     padding-left: 90px;
 }
+
 img {
     padding-left: 30px;
 }

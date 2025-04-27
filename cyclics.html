@@ -1,41 +1,42 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Cyclic</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="group_style.css">
-        <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
-        <script src="cyclic.js" defer></script>
-    </head>
 
-    <body>
-        <header>
-            <a href="https://jrhuntub.github.io/LetsUseSage/index">
-                <h1>Let's Use Sage!</h1>
-            </a>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <title>Cyclic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="group_style.css">
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script src="cyclic.js" defer></script>
+</head>
 
-        <div class="group-container">
-            <h2>Cyclic</h2>
-    
-            <label for="groupType">Choose Group Type:</label>
-            <select id="groupType" onchange="updatePlaceholder()">
-                <option value="empty">Please Select a Group</option>
-                <option value="Zmod">ℤ mod n</option>
-                <option value="S">Symmetric group (Sₙ)</option>
-                <option value="D">Dihedral group (Dₙ)</option>
-                <option value="A">Alternating group (Aₙ)</option>
-            </select>
-    
-            <label id="paramLabel" for="groupParam">n:</label>
-            <input type="number" id="groupParam" value="0">
-    
-    
-            <!-- Sage Cell Output -->
-            <div id="sagecell"></div>
-        </div>
-        
-    </body>
+<body>
+    <header>
+        <a href="https://jrhuntub.github.io/LetsUseSage/index">
+            <h1>Let's Use Sage!</h1>
+        </a>
+    </header>
+
+    <div class="group-container">
+        <h2>Cyclic</h2>
+
+        <label for="groupType">Choose Group Type:</label>
+        <select id="groupType" onchange="updatePlaceholder()">
+            <option value="empty">Please Select a Group</option>
+            <option value="Zmod">ℤ mod n</option>
+            <option value="S">Symmetric group (Sₙ)</option>
+            <option value="D">Dihedral group (Dₙ)</option>
+            <option value="A">Alternating group (Aₙ)</option>
+        </select>
+
+        <label id="paramLabel" for="groupParam">n:</label>
+        <input type="number" id="groupParam" value="0">
+
+
+        <!-- Sage Cell Output -->
+        <div id="sagecell"></div>
+    </div>
+
+</body>
 
 </html>
