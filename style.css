@@ -64,3 +64,10 @@ a.choice:hover {
 div.choices {
     padding: 60px;
 }
+
+div.images {
+    padding-left: 90px;
+}
+img {
+    padding-left: 30px;
+}
