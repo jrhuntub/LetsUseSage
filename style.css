@@ -2,14 +2,14 @@
 
 /*Main StyleSheet*/
 body {
-    margin: 200px;
+    margin: 0;
     display: flex;
     align-items: center;
     align-content: center;
     background-image: url(https://wallpapercave.com/wp/wp3640389.jpg);
     background-size: cover;
     background-position: top;
-    padding-top: 75px;
+    padding: 175px 20px 20px 20px; /* padding top to make space for header */
     flex-wrap: wrap;
     flex-direction: column;
 }
@@ -20,7 +20,9 @@ h2.index {
     font-size: x-large;
     background-color: blue;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.612);
-    padding: 20px 20px;
+    padding: 20px;
+    text-align: center;
+    text-shadow: 1px 1px black;
 }
 
 header {
@@ -36,19 +38,32 @@ header {
     background: linear-gradient(to top right, black, hsl(212, 100%, 19%));
 }
 
+header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    text-align: center;
+}
+
 a {
     color: white;
     text-decoration: none;
+}
 
-    :hover {
-        background-color: none;
-        text-decoration: underline;
-    }
+a:hover {
+    text-decoration: underline;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
 a.choice {
-    margin: 20px;
-    padding: 20px 20px;
+    flex: 1 1 200px;
+    text-align: center;
+    padding: 20px;
     font-size: x-large;
     color: white;
     background-color: blue;
@@ -61,14 +76,28 @@ a.choice:hover {
     background-color: rgb(1, 1, 145);
 }
 
-div.choices {
-    padding: 60px;
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
-div.images {
-    padding-left: 90px;
+.images img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
 }
 
-img {
-    padding-left: 30px;
+/* Optional tweak for small screens */
+@media (max-width: 600px) {
+    h2.index {
+        font-size: large;
+        padding: 10px;
+    }
+    a.choice {
+        font-size: large;
+        padding: 15px;
+    }
 }

@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body {
-    margin: 120px;
+    margin: 20px;
 }
 
 
@@ -37,7 +37,7 @@ input {
 
 div.form-1,
 div.form-2 {
-    max-width: 800px;
+    max-width: 600px;
     max-height: 600px;
     margin: 50px 50px;
     background-color: rgba(0, 0, 255, 0.675);
