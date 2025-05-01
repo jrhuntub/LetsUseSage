@@ -9,7 +9,7 @@ body {
     background-image: url(https://wallpapercave.com/wp/wp3640389.jpg);
     background-size: cover;
     background-position: top;
-    padding: 175px 20px 20px 20px; /* padding top to make space for header */
+    padding: 175px 20px 20px 20px;
     flex-wrap: wrap;
     flex-direction: column;
 }
@@ -90,12 +90,13 @@ a.choice:hover {
     height: auto;
 }
 
-/* Optional tweak for small screens */
+/* For small screens */
 @media (max-width: 600px) {
     h2.index {
         font-size: large;
         padding: 10px;
     }
+
     a.choice {
         font-size: large;
         padding: 15px;
